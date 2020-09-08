@@ -1,3 +1,5 @@
+package Lesson2.Task1;
+
 import java.util.Scanner;
 
 public class LastDigit {
