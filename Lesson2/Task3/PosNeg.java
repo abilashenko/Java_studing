@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class PosNeg {
     public static void main(String[] args) {
-            int number;
-            Scanner scanner = new Scanner(System.in);
+        int number;
+        Scanner scanner = new Scanner(System.in);
             System.out.println("Введите целое число:");
             while (!scanner.hasNextInt()) {
                 System.out.println("Вы ввели не целое число!\nВведите целое число:");
@@ -16,5 +16,5 @@ public class PosNeg {
             else number = input;
             String result = "Результат вычислений:" + (number);
             System.out.println(result);
+        }
     }
-}
