@@ -7,7 +7,6 @@ public class MaxNumber {
         public static void main(String[] args) {
                 int[] Arr = new int[3];
                 Scanner scanner = new Scanner(System.in);
-
                 for (int i = 0; i < 3; i++)
                 {
                     System.out.print("Введите " + (i + 1) + "-е целое число: ");
