@@ -27,7 +27,7 @@ public class MaxNumber {
                     scanner.next();
                 }
                 n3=scanner.nextInt();
-                int Arr[]={n1, n2, n3};
+                int[] Arr ={n1, n2, n3};
                 Arrays.sort(Arr);
                 System.out.println("Наименьшее число из трёх введённых: " + Arr[0]);
             }
