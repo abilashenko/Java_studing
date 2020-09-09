@@ -15,7 +15,7 @@ public class DigitSum {
         do {
             System.out.println("Введите целое трёхзначное число:");
             while (!scanner.hasNextInt()) {
-                System.out.println("Вы ввели не число!\nВведите целое трёхзначное число:");
+                System.out.println("Вы ввели не целое число!\nВведите целое трёхзначное число:");
                 scanner.next();
             }
           number = scanner.nextInt();
