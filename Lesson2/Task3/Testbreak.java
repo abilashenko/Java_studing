@@ -12,7 +12,7 @@ public class Testbreak {
                 break;
             }
             while (!scanner.hasNextInt()) {
-                System.out.println("Вы ввели не целое число!\nВведите целое число:");
+                System.out.println("Вы ввели не целое число!\nВведите целое число (q - выход):");
                 scanner.next();
             }
             int input = scanner.nextInt();
