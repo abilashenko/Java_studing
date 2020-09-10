@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Billing {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-            System.out.println("Калькулятор стоимости междугородней связи.");
+        System.out.println("Калькулятор стоимости междугородней связи.");
         while (true) {
             System.out.println("Введите длительность разговора в минутах:");
             while (!scanner.hasNextInt()) {
