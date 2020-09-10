@@ -7,13 +7,14 @@ public class Testbreak {
         int number;
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Введите целое число:");
-            String str = scanner.next();
-            if ("q".equals(str)) {break;} else {
-                while (!scanner.hasNextInt()) {
-                    System.out.println("Вы ввели не целое число!\nВведите целое число:");
-                    scanner.next();
-                }}
+            System.out.println("Введите целое число (q - выход):");
+            if (scanner.next().equals("q")) {
+                break;
+            }
+            while (!scanner.hasNextInt()) {
+                System.out.println("Вы ввели не целое число!\nВведите целое число:");
+                scanner.next();
+            }
             int input = scanner.nextInt();
             if (input > 0) number = input + 1;
             else number = input;
