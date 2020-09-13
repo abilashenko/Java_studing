@@ -4,19 +4,21 @@ import java.util.Scanner;
 
 public class PosNeg {
     public static void main(String[] args) {
-        int number;
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Введите целое число:");
-            while (!scanner.hasNextInt()) {
-                System.out.println("Вы ввели не целое число!\nВведите целое число:");
-                scanner.next();
+            System.out.println("Введите целое число (q - выход):");
+            if (scanner.hasNextInt()) {
+                int input = scanner.nextInt();
+                if (input > 0) {
+                    input++;
+                }
+                String result = "Результат вычислений:" + (input);
+                System.out.println(result);
+            } else if (scanner.next().equals("q")) {
+                break;
+            } else {
+                System.out.println("Вы ввели не целое число!");
             }
-            int input = scanner.nextInt();
-            if (input > 0) number = input + 1;
-            else number = input;
-            String result = "Результат вычислений:" + (number);
-            System.out.println(result);
         }
     }
 }

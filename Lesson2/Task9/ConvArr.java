@@ -7,7 +7,7 @@ public class ConvArr {
         int[] Arr = {15, 10, 51, -6, -5, 3, -10, -34, 0, 32, 56, -12, 24, -52};
         int len = Arr.length;
         int[] ArrConv = new int[len];
-        for (int i=0, j=len-1; i<len; i++, j--) {
+        for (int i = 0, j = len - 1; i < len; i++, j--) {
             ArrConv[i] = Arr[j];
         }
         System.out.println("Обратный массив: " + Arrays.toString(ArrConv));

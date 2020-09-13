@@ -5,14 +5,17 @@ import java.util.Scanner;
 public class LastDigit {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите целое число: ");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Вы ввели не целое число!\nВведите целое число:");
-            scanner.next();
+        while (true) {
+            System.out.println("Введите целое число (q - выход):");
+            if (scanner.hasNextInt()) {
+                int lastdigit = scanner.nextInt() % 10;
+                String result = "Последняя цифра вашего числа: " + lastdigit;
+                System.out.println(result);
+            } else if (scanner.next().equals("q")) {
+                break;
+            } else {
+                System.out.println("Вы ввели не целое число!");
+            }
         }
-        int number = scanner.nextInt();
-        int lastdigit = number%10;
-        String result = "Последняя цифра вашего числа: " + lastdigit;
-        System.out.println (result);
     }
 }
