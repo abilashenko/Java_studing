@@ -1,15 +1,26 @@
 package Lesson3.Task3;
 
 public class Aspirant extends Student {
-    Boolean scientificWork = true;
+
+    public Aspirant(String lastName, String firstName, int group, double averageMark, Boolean scientificWork) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.group = group;
+        this.averageMark = averageMark;
+        this.scientificWork = scientificWork;
+    }
 
     @Override
-    int getScholarship(double averageMark) {
+    public int getScholarship(double averageMark, Boolean scientificWork) {
         if (averageMark == 5) {
             scholarship = 200;
         } else {
             scholarship = 180;
         }
-        return scholarship;
+        if (scientificWork) {
+            return scholarship += 100;
+        } else {
+            return scholarship;
+        }
     }
 }

@@ -1,19 +1,19 @@
 package Lesson3.Task2;
 
 public class Horse extends Animal {
-    String age;
+    private int age;
 
-    public Horse(String food, String location) {
+    public Horse(String food, String location, int age) {
         super(food, location);
     }
 
     @Override
-    void makeNoise() {
+    public void makeNoise() {
         System.out.println("Лошадь стучит копытами!");
     }
 
     @Override
-    void eat() {
+    public void eat() {
         System.out.println("Лошадь щиплет травку!");
     }
 }

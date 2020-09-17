@@ -1,19 +1,19 @@
 package Lesson3.Task2;
 
 public class Dog extends Animal {
-    String kind;
+    private String kind;
 
-    public Dog(String food, String location) {
+    public Dog(String food, String location, String kind) {
         super(food, location);
     }
 
     @Override
-    void makeNoise() {
+    public void makeNoise() {
         System.out.println("Собака рычит и гавкает!");
     }
 
     @Override
-    void eat() {
+    public void eat() {
         System.out.println("Собака ест кусок свежего мяса!");
     }
 }

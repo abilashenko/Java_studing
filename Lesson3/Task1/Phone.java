@@ -1,23 +1,23 @@
 package Lesson3.Task1;
 
 public class Phone {
-    int number;
-    String model;
-    int weight;
-    String name;
+    public int number;
+    public String model;
+    public int weight;
+    public String name;
 
-    void aboutPhone() {
-        System.out.println("Номер телефона 1: " + number);
-        System.out.println("Модель телефона 1: " + model);
-        System.out.println("Вес телефона 1: " + weight);
+    public void aboutPhone() {
+        System.out.println("Номер телефона: " + number);
+        System.out.println("Модель телефона: " + model);
+        System.out.println("Вес телефона: " + weight);
     }
 
-    void receiveCall(String userName) {
-        name = userName;
+    public void receiveCall(String userName) {
+        this.name = userName;
         System.out.println("Звонит " + name);
     }
 
-    int getNumber() {
+    public int getNumber() {
         return number;
     }
 
@@ -34,13 +34,16 @@ public class Phone {
     }
 
     public Phone() {
+        this.number = 0;
+        this.model = "NoName";
+        this.weight = 0;
     }
 
-    static void receiveCall(String userName, int phoneNumber) {
+    public static void receiveCall(String userName, int phoneNumber) {
         System.out.println("Новый пользователь '" + userName + "' с номером: " + phoneNumber);
     }
 
-    static void sendMessage(int... numbers) {
+    public static void sendMessage(int... numbers) {
         System.out.println("Сообщение будет отправлено на следующие номера:");
         for (int i = 0; i < numbers.length; i++) {
             System.out.println("Номер " + (i + 1) + ": " + numbers[i]);
