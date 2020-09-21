@@ -6,7 +6,6 @@ public class Student {
     public int group;
     public double averageMark;
     public int scholarship;
-    public Boolean scientificWork;
 
     public Student(String lastName, String firstName, int group, double averageMark) {
         this.lastName = lastName;

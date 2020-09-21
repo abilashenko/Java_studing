@@ -1,8 +1,9 @@
 package Lesson3.Task3;
 
 public class Aspirant extends Student {
+    public boolean scientificWork;
 
-    public Aspirant(String lastName, String firstName, int group, double averageMark, Boolean scientificWork) {
+    public Aspirant(String lastName, String firstName, int group, double averageMark, boolean scientificWork) {
         super (lastName, firstName, group, averageMark);
         this.scientificWork = scientificWork;
     }

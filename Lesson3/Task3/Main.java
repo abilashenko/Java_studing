@@ -13,10 +13,10 @@ public class Main {
         students[5] = new Aspirant("Сергеев", "Сергей", 2, 4.9, true);
 
         for (int i = 0; i < 6; i++) {
-            if (students[i].scientificWork == null) {
-                studentType = "студент";
-            } else {
+            if (students[i] instanceof Aspirant) {
                 studentType = "аспирант";
+            } else {
+                studentType = "студент";
             }
             System.out.println("Стипендия " + studentType + "а " + students[i].lastName + "а из группы " + students[i].group + " - " + students[i].getScholarship());
         }
