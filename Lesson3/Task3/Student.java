@@ -8,9 +8,6 @@ public class Student {
     public int scholarship;
     public Boolean scientificWork;
 
-    public Student() {
-    }
-
     public Student(String lastName, String firstName, int group, double averageMark) {
         this.lastName = lastName;
         this.firstName = firstName;
