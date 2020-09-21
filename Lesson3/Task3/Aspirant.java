@@ -8,7 +8,7 @@ public class Aspirant extends Student {
     }
 
     @Override
-    public int getScholarship(double averageMark, Boolean scientificWork) {
+    public int getScholarship() {
         if (averageMark == 5) {
             scholarship = 200;
         } else {

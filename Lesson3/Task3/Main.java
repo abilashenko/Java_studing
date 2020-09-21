@@ -18,7 +18,7 @@ public class Main {
             } else {
                 studentType = "аспирант";
             }
-            System.out.println("Стипендия " + studentType + "а " + students[i].lastName + "а из группы " + students[i].group + " - " + students[i].getScholarship(students[i].averageMark, students[i].scientificWork));
+            System.out.println("Стипендия " + studentType + "а " + students[i].lastName + "а из группы " + students[i].group + " - " + students[i].getScholarship());
         }
     }
 }

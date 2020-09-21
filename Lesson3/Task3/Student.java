@@ -15,7 +15,7 @@ public class Student {
         this.averageMark = averageMark;
     }
 
-    public int getScholarship(double averageMark, Boolean scientificWork) {
+    public int getScholarship() {
         if (averageMark == 5) {
             scholarship = 100;
         } else {
