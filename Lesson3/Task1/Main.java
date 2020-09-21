@@ -22,9 +22,11 @@ public class Main {
         }
         System.out.println();
 
-        Phone.receiveCall("Tom", 9999);
+        Phone newPhone = new Phone();
+
+        newPhone.receiveCall("Tom", 9999);
         System.out.println();
 
-        Phone.sendMessage(1111, 2222, 3333, 4444, 5555, 6666, 7777);
+        newPhone.sendMessage(1111, 2222, 3333, 4444, 5555, 6666, 7777);
     }
 }

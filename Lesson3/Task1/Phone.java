@@ -39,11 +39,11 @@ public class Phone {
         this.weight = 0;
     }
 
-    public static void receiveCall(String userName, int phoneNumber) {
+    public void receiveCall(String userName, int phoneNumber) {
         System.out.println("Новый пользователь '" + userName + "' с номером: " + phoneNumber);
     }
 
-    public static void sendMessage(int... numbers) {
+    public void sendMessage(int... numbers) {
         System.out.println("Сообщение будет отправлено на следующие номера:");
         for (int i = 0; i < numbers.length; i++) {
             System.out.println("Номер " + (i + 1) + ": " + numbers[i]);
