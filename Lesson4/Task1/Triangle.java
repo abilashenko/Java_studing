@@ -1,19 +1,15 @@
 package Lesson4.Task1;
 
-import java.util.Scanner;
-
 public class Triangle implements Shape {
-    double[] a = new double[3];
-    Scanner scanner = new Scanner(System.in);
+    private double a;
+    private double b;
+    private double c;
 
     public double square() {
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Ведите длину " + (i + 1) + "-ой стороны треугольника: ");
-            if (scanner.hasNextDouble()) {
-                a[i] = scanner.nextDouble();
-            }
-        }
-        double p = (a[0] + a[1] + a[2]) / 2;
-        return Math.sqrt(p * (p - a[0]) * (p - a[1]) * (p - a[2]));
+        this.a = 4.7;
+        this.b = 5.8;
+        this.c = 10;
+        double p = (a + b + c) / 2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 }
