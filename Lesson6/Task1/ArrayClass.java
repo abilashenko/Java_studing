@@ -1,7 +1,5 @@
 package Lesson6.Task1;
 
-import org.omg.CORBA.Object;
-
 import java.util.Arrays;
 
 public class ArrayClass<E> {
@@ -9,16 +7,18 @@ public class ArrayClass<E> {
     private int counter = 0;
 
     public int size() {
-        return array.length;
+        return counter;
     }
 
     public void add(E item) {
-        if (counter > 0 & counter % 20 == 0) {
+        if ((counter > 0) && (counter % 20 == 0)) {
             E[] newarray = Arrays.copyOf(array, array.length + 20);
             newarray[counter] = item;
+            array = newarray;
         } else {
             array[counter] = item;
         }
+        counter++;
     }
 
     public void remove(int index) {
@@ -27,11 +27,12 @@ public class ArrayClass<E> {
             array[i - 1] = array[i];
             array[i] = null;
         }
+        counter--;
     }
 
     public void remove(E item) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i].equals(item)) {
+            if ((array[i] != null) && (array[i].equals(item))) {
                 remove(i);
             }
         }
@@ -43,5 +44,18 @@ public class ArrayClass<E> {
 
     public void clear() {
         array = null;
+        counter = 0;
+    }
+
+    @Override
+    public String toString() {
+        String arr = "{";
+        for (int i = 0; i < counter; i++) {
+            if (array[i] != null) {
+                arr += array[i].toString() + ",";
+            }
+        }
+        arr += "}";
+        return arr;
     }
 }
