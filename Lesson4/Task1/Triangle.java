@@ -5,10 +5,13 @@ public class Triangle implements Shape {
     private double b;
     private double c;
 
+    public Triangle(double a, double b, double c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
     public double square() {
-        this.a = 4.7;
-        this.b = 5.8;
-        this.c = 10;
         double p = (a + b + c) / 2;
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
