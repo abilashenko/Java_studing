@@ -75,7 +75,7 @@ public class Box {
                 break;
         }
         str += fruits.size() + " шт, ";
-        str += "вес коробки - " + Float.toString(getBoxWeight()) + ".";
+        str += "вес коробки - " + getBoxWeight() + ".";
         return str;
     }
 }
