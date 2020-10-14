@@ -1,12 +1,19 @@
-package Lesson7;
+package Task1;
 
 import java.util.Scanner;
 
 public class AccountManager {
-    AccountService accountService;
+    IfAccountService accountService;
 
-    public AccountManager(String path) {
-        accountService = new AccountService(path);
+    public AccountManager(String path, String type) {
+        switch (type) {
+            case "File":
+                accountService = new AccountService(path);
+                break;
+            case "DB":
+                accountService = new AccountServiceDB();
+                break;
+        }
         menu();
     }
 
