@@ -14,7 +14,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         logType = scanner.nextLine();
 
-        if (logType != null) {
             switch (logType) {
                 case "F":
                     logFactory = new FileLoggerFactory();
@@ -29,9 +28,7 @@ public class Main {
                     System.out.println("Указанный тип логирования не поддерживается.");
                     System.exit(1);
             }
-        }
 
-        assert logFactory != null;
         logger = logFactory.createLogger();
         Calculator calculator = new Calculator(logger);
 
