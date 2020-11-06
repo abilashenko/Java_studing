@@ -37,7 +37,7 @@ public class LinkedClass<E> {
     public void remove(int index) {
         int listIndex = 0;
         Node element = first;
-        while (true) {
+        while (element.next != null) {
             if (listIndex == index) {
                 if (element == first) {
                     first = element.next;
@@ -63,7 +63,7 @@ public class LinkedClass<E> {
             return;
         }
         Node element = first;
-        while (true) {
+        while (element.next != null) {
             if ((element.object != null) && (element.object.equals(item))) {
                 if (element == first) {
                     first = element.next;
@@ -79,9 +79,6 @@ public class LinkedClass<E> {
                 break;
             } else {
                 element = element.next;
-                if (element == null) {
-                    break;
-                }
             }
         }
     }
@@ -89,7 +86,7 @@ public class LinkedClass<E> {
     public E get(int index) {
         int indx = 0;
         Node element = first;
-        while (true) {
+        while (element.next != null) {
             if (indx == index) {
                 return element.object;
             } else {
@@ -97,6 +94,7 @@ public class LinkedClass<E> {
                 element = element.next;
             }
         }
+        return null;
     }
 
     public void clear() {
@@ -113,10 +111,8 @@ public class LinkedClass<E> {
         } else {
             list = "{";
             Node element = first;
-            while (true) {
-                if (element.object != null) {
-                    list += element.object.toString() + ",";
-                }
+            while (element.object != null) {
+                list += element.object.toString() + ",";
                 element = element.next;
                 if (element == null) {
                     break;

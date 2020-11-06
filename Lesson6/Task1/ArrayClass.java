@@ -11,8 +11,9 @@ public class ArrayClass<E> {
     }
 
     public void add(E item) {
-        if ((counter > 0) && (counter % 20 == 0)) {
-            E[] newarray = Arrays.copyOf(array, array.length + 20);
+        int step = 20;
+        if ((counter > 0) && (counter % step == 0)) {
+            E[] newarray = Arrays.copyOf(array, array.length + step);
             newarray[counter] = item;
             array = newarray;
         } else {
