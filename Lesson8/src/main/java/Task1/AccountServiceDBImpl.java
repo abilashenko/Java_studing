@@ -1,8 +1,12 @@
 package Task1;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class AccountServiceDB implements IfAccountService {
+public class AccountServiceDBImpl implements AccountService {
     @Override
     public void balance(int accountID) throws UnknownAccountException {
         Connection connection = null;

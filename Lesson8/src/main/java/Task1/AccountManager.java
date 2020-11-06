@@ -3,15 +3,15 @@ package Task1;
 import java.util.Scanner;
 
 public class AccountManager {
-    IfAccountService accountService;
+    AccountService accountService;
 
     public AccountManager(String path, String type) {
         switch (type) {
             case "File":
-                accountService = new AccountService(path);
+                accountService = new AccountServiceImpl(path);
                 break;
             case "DB":
-                accountService = new AccountServiceDB();
+                accountService = new AccountServiceDBImpl();
                 break;
         }
         menu();
