@@ -1,10 +1,6 @@
 package Task1;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class AccountServiceDBImpl implements AccountService {
     @Override
@@ -191,33 +187,16 @@ public class AccountServiceDBImpl implements AccountService {
     }
 
     public void isAccount(int accountID) throws UnknownAccountException {
-        Connection connection = null;
-        PreparedStatement statement = null;
 
+        String sql = "SELECT * FROM ACCOUNT WHERE ID=?";
         try {
-            try {
-                connection = DriverManager.getConnection("jdbc:h2:file:~/test");
-                String sql = "SELECT * FROM ACCOUNT WHERE ID=?";
-                statement = connection.prepareStatement(sql);
+            try (Connection connection = DriverManager.getConnection("jdbc:h2:file:~/test");
+                 PreparedStatement statement = connection.prepareStatement(sql);
+                 ResultSet resultSet = statement.executeQuery()
+            ) {
                 statement.setInt(1, accountID);
-                ResultSet resultSet = statement.executeQuery();
-
                 if (!resultSet.next()) {
                     throw new UnknownAccountException("(id = " + accountID + ")");
-                }
-            } finally {
-                try {
-                    if (statement != null) {
-                        statement.close();
-                    }
-                } catch (Exception e) {
-                }
-
-                try {
-                    if (connection != null) {
-                        connection.close();
-                    }
-                } catch (Exception e) {
                 }
             }
         } catch (SQLException throwables) {
