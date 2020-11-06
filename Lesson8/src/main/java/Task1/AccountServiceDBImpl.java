@@ -189,15 +189,13 @@ public class AccountServiceDBImpl implements AccountService {
     public void isAccount(int accountID) throws UnknownAccountException {
 
         String sql = "SELECT * FROM ACCOUNT WHERE ID=?";
-        try {
-            try (Connection connection = DriverManager.getConnection("jdbc:h2:file:~/test");
-                 PreparedStatement statement = connection.prepareStatement(sql);
-                 ResultSet resultSet = statement.executeQuery()
-            ) {
-                statement.setInt(1, accountID);
-                if (!resultSet.next()) {
-                    throw new UnknownAccountException("(id = " + accountID + ")");
-                }
+        try (Connection connection = DriverManager.getConnection("jdbc:h2:file:~/test");
+             PreparedStatement statement = connection.prepareStatement(sql);
+             ResultSet resultSet = statement.executeQuery()
+        ) {
+            statement.setInt(1, accountID);
+            if (!resultSet.next()) {
+                throw new UnknownAccountException("(id = " + accountID + ")");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
