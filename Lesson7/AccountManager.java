@@ -3,10 +3,10 @@ package Lesson7;
 import java.util.Scanner;
 
 public class AccountManager {
-    AccountService accountService;
+    AccountServiceImpl accountServiceImpl;
 
     public AccountManager(String path) {
-        accountService = new AccountService(path);
+        accountServiceImpl = new AccountServiceImpl(path);
         menu();
     }
 
@@ -42,7 +42,7 @@ public class AccountManager {
 
     private void balance(String[] args) {
         try {
-            accountService.balance(Integer.parseInt(args[1]));
+            accountServiceImpl.balance(Integer.parseInt(args[1]));
         } catch (UnknownAccountException e) {
             System.out.println("Пользователь " + e.getMessage() + " не найден.");
         }
@@ -50,7 +50,7 @@ public class AccountManager {
 
     private void withdraw(String[] args) {
         try {
-            accountService.withdraw(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+            accountServiceImpl.withdraw(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
         } catch (UnknownAccountException e) {
             System.out.println("Пользователь " + e.getMessage() + " не найден.");
         } catch (NotEnoughMoneyException e) {
@@ -60,7 +60,7 @@ public class AccountManager {
 
     private void deposite(String[] args) {
         try {
-            accountService.deposit(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+            accountServiceImpl.deposit(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
         } catch (UnknownAccountException e) {
             System.out.println("Пользователь " + e.getMessage() + " не найден.");
         } catch (NotEnoughMoneyException e) {
@@ -70,7 +70,7 @@ public class AccountManager {
 
     private void transfer(String[] args) {
         try {
-            accountService.transfer(Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+            accountServiceImpl.transfer(Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[3]));
         } catch (UnknownAccountException e) {
             System.out.println("Пользователь " + e.getMessage() + " не найден.");
         } catch (NotEnoughMoneyException e) {
