@@ -35,6 +35,9 @@ public class LinkedClass<E> {
     }
 
     public void remove(int index) {
+        if (counter == 0) {
+            return;
+        }
         int listIndex = 0;
         Node element = first;
         while (element.next != null) {
@@ -59,27 +62,15 @@ public class LinkedClass<E> {
     }
 
     public void remove(E item) {
-        if (counter == 0) {
-            return;
-        }
         Node element = first;
+        int index = 0;
         while (element.next != null) {
             if ((element.object != null) && (element.object.equals(item))) {
-                if (element == first) {
-                    first = element.next;
-                    first.prev = null;
-                } else if (element == last) {
-                    last = element.prev;
-                    last.next = null;
-                } else {
-                    element.prev.next = element.next;
-                    element.next.prev = element.prev;
-                }
-                counter--;
+                remove(index);
                 break;
-            } else {
-                element = element.next;
             }
+            index++;
+            element = element.next;
         }
     }
 
