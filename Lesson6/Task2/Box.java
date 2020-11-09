@@ -2,48 +2,22 @@ package Lesson6.Task2;
 
 import java.util.ArrayList;
 
-public class Box {
-    private final ArrayList<Fruit> fruits;
-    public String boxType;
+public class Box<T extends Fruit> {
+    private final ArrayList<T> fruits;
 
     public Box() {
-        fruits = new ArrayList<>();
-        boxType = "empty";
+        this.fruits = new ArrayList<>();
     }
 
-    public void add(Fruit fruit) {
-        if (boxType.equals("empty")) {
-            if (fruit instanceof Apple) {
-                boxType = "apple";
-            } else if (fruit instanceof Orange) {
-                boxType = "orange";
-            } else {
-                System.out.println("Коробка только для яблок и апельсинов");
-            }
-        } else {
-            switch (boxType) {
-                case "apple":
-                    if (!(fruit instanceof Apple)) {
-                        System.out.println("Коробка только для яблок");
-                    }
-                    break;
-                case "orange":
-                    if (!(fruit instanceof Orange)) {
-                        System.out.println("Коробка только для апельсинов");
-                    }
-                    break;
-                default:
-                    System.out.println("Коробка только для яблок и апельсинов");
-            }
-        }
+    public void add(T fruit) {
         fruits.add(fruit);
     }
 
     public Float getBoxWeight() {
         Float weight = 0.0f;
 
-        for (Fruit frut : fruits) {
-            weight += frut.getWeight();
+        for (T fruit : fruits) {
+            weight += fruit.getWeight();
         }
         return weight;
     }
@@ -52,28 +26,16 @@ public class Box {
         return Float.compare(getBoxWeight(), box.getBoxWeight()) == 0;
     }
 
-    public void splitBoxes(Box box) {
-        for (Fruit fruit : fruits) {
+    public void splitBoxes(Box<T> box) {
+        for (T fruit : fruits) {
             box.add(fruit);
         }
         fruits.clear();
-        boxType = "empty";
     }
 
     @Override
     public String toString() {
-        String str = "в коробке ";
-        switch (boxType) {
-            case "apple":
-                str += "яблоки, ";
-                break;
-            case "orange":
-                str += "апельсины, ";
-                break;
-            default:
-                str = "в коробке нет яблок или апельсинов, ";
-                break;
-        }
+        String str = "";
         str += fruits.size() + " шт, ";
         str += "вес коробки - " + getBoxWeight() + ".";
         return str;

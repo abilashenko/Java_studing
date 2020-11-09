@@ -1,61 +1,53 @@
 package Lesson6.Task2;
 
-import java.util.ArrayList;
-
 public class MainClass {
     public static void main(String[] args) {
-        ArrayList<Box> boxes = new ArrayList<>();
+        Box<Apple> appleBox1 = new Box<>();
+        appleBox1.add(new Apple());
+        appleBox1.add(new Apple());
+        appleBox1.add(new Apple());
+        appleBox1.add(new Apple());
+        appleBox1.add(new Apple());
+        appleBox1.add(new Apple());
 
-        Box box = new Box();
-        box.add(new Apple());
-        box.add(new Apple());
-        box.add(new Apple());
-        box.add(new Apple());
-        box.add(new Apple());
-        box.add(new Apple());
-        boxes.add(box);
+        Box<Apple> appleBox2 = new Box<>();
+        appleBox2.add(new Apple());
+        appleBox2.add(new Apple());
+        appleBox2.add(new Apple());
 
-        box = new Box();
-        box.add(new Apple());
-        box.add(new Apple());
-        box.add(new Apple());
-        boxes.add(box);
+        Box<Orange> orangeBox1 = new Box<>();
+        orangeBox1.add(new Orange());
+        orangeBox1.add(new Orange());
+        orangeBox1.add(new Orange());
+        orangeBox1.add(new Orange());
+        orangeBox1.add(new Orange());
+        orangeBox1.add(new Orange());
+        orangeBox1.add(new Orange());
+        orangeBox1.add(new Orange());
 
-        box = new Box();
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        boxes.add(box);
+        Box<Orange> orangeBox2 = new Box<>();
+        orangeBox2.add(new Orange());
+        orangeBox2.add(new Orange());
+        orangeBox2.add(new Orange());
+        orangeBox2.add(new Orange());
+        orangeBox2.add(new Orange());
+        orangeBox2.add(new Orange());
 
-        box = new Box();
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        box.add(new Orange());
-        boxes.add(box);
+        appleBox1.splitBoxes(appleBox2);
 
-        boxes.get(0).splitBoxes(boxes.get(1));
+        System.out.println("Коробка 1 (с яблоками): " + appleBox1.toString());
+        System.out.println("Коробка 2 (с яблоками): " + appleBox2.toString());
 
-        System.out.println("Коробка 1: " + boxes.get(0).toString());
-        System.out.println("Коробка 2: " + boxes.get(1).toString());
+        System.out.println("Коробка 3 (с апельсинами): " + orangeBox1.toString());
+        System.out.println("Коробка 4 (с апельсинами): " + orangeBox2.toString());
 
-        System.out.println("Коробка 3: " + boxes.get(2).toString());
-        System.out.println("Коробка 4: " + boxes.get(3).toString());
-
-        if (boxes.get(1).compare(boxes.get(2))) {
+        if (appleBox1.compare(orangeBox1)) {
             System.out.println("Вес коробок 2 и 3 одинаков.");
         } else {
             System.out.println("Вес коробок 2 и 3 разный.");
         }
 
-        if (boxes.get(1).compare(boxes.get(3))) {
+        if (appleBox2.compare(orangeBox2)) {
             System.out.println("Вес коробок 2 и 4 одинаков.");
         } else {
             System.out.println("Вес коробок 2 и 4 разный.");
