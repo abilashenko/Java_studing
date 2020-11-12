@@ -1,20 +1,16 @@
 package Lesson5.Task2;
 
-public class RAM implements Component {
-    private int frequency;
+public class GPU implements Component {
     private int memory;
     private String memoryType;
     private String manufacturer;
+    private String coolingType;
 
-    public RAM(int frequency, int memory, String memoryType, String manufacturer) {
-        this.frequency = frequency;
+    public GPU(int memory, String memoryType, String manufacturer, String coolingType) {
         this.memory = memory;
         this.memoryType = memoryType;
         this.manufacturer = manufacturer;
-    }
-
-    public int getFrequency() {
-        return frequency;
+        this.coolingType = coolingType;
     }
 
     public int getMemory() {
@@ -29,13 +25,18 @@ public class RAM implements Component {
         return manufacturer;
     }
 
+    public String getCoolingType() {
+        return coolingType;
+    }
+
     @Override
     public String getInfo() {
         String str = "";
-        str += "Частота (МГц): " + frequency + ",";
-        str += " Память (GB): " + memory + ",";
+        str += "Память (GB): " + memory + ",";
         str += " Тип памяти: " + memoryType + ",";
-        str += " Производитель: " + manufacturer;
+        str += " Производитель: " + manufacturer + ",";
+        str += " Тип охлаждения: " + coolingType;
         return str;
     }
+
 }
